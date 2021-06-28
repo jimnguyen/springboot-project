@@ -1,16 +1,31 @@
 package learn.springboot.project.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
 
+    private final StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+
     public List<Student> getStudents() {
-        LocalDate dob = LocalDate.of(1992, 10, 26);
-        return List.of(new Student(1L, "Jim", "jimnguyen@jim.com", dob, Period.between(dob, LocalDate.now()).getYears()));
+        return studentRepository.findAll();
+    }
+
+    public void addNewStudent(Student student) {
+        Optional<Student> studentOptional = studentRepository.findStudentByEmail(student.getEmail());
+        if (studentOptional.isPresent()) {
+            throw new IllegalStateException("Email exists");
+        }
+        studentRepository.save(student);
     }
 }
