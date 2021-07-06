@@ -1,4 +1,4 @@
-package learn.springboot.project.student;
+package learn.springboot.project.student.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;

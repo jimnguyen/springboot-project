@@ -1,11 +1,12 @@
-package learn.springboot.project.student;
+package learn.springboot.project.student.config;
 
+import learn.springboot.project.student.model.Student;
+import learn.springboot.project.student.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 
 @Configuration

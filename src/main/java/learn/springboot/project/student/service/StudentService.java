@@ -1,5 +1,7 @@
-package learn.springboot.project.student;
+package learn.springboot.project.student.service;
 
+import learn.springboot.project.student.model.Student;
+import learn.springboot.project.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

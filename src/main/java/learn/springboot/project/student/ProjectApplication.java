@@ -1,4 +1,4 @@
-package learn.springboot.project;
+package learn.springboot.project.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
