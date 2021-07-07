@@ -32,12 +32,22 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public void deleteStudent(Long studentId) {
+    public Optional<Student> getStudentById(Long studentId) {
         boolean exists = studentRepository.existsById(studentId);
         if (!exists) {
             throw new IllegalStateException("student with id " + studentId + " does not exist");
         }
+        return studentRepository.getStudentById(studentId);
+    }
+
+    public Optional<Student> deleteStudent(Long studentId) {
+        boolean exists = studentRepository.existsById(studentId);
+        if (!exists) {
+            throw new IllegalStateException("student with id " + studentId + " does not exist");
+        }
+        Optional<Student> studentOptional = studentRepository.getStudentById(studentId);
         studentRepository.deleteById(studentId);
+        return studentOptional;
     }
 
     @Transactional

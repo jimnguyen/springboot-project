@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(path="api/v1/student")
+@RequestMapping(path = "api/v1/student")
 public class StudentController {
     private final StudentService studentService;
 
@@ -22,14 +23,19 @@ public class StudentController {
         return studentService.getStudents();
     }
 
+    @GetMapping(path = "{studentId}")
+    public Optional<Student> getStudentById(@PathVariable("studentId") Long studentId) {
+        return studentService.getStudentById(studentId);
+    }
+
     @PostMapping
     public void registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
     }
 
     @DeleteMapping(path = "{studentId}")
-    public void deleteStudent(@PathVariable("studentId") Long studentId) {
-        studentService.deleteStudent(studentId);
+    public Optional<Student> deleteStudent(@PathVariable("studentId") Long studentId) {
+        return studentService.deleteStudent(studentId);
     }
 
     @PutMapping(path = "{studentId}")
