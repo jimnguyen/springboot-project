@@ -1,4 +1,4 @@
-package learn.springboot.project.student;
+package jim.api.student;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

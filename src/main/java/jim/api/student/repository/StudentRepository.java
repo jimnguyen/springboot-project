@@ -1,6 +1,6 @@
-package learn.springboot.project.student.repository;
+package jim.api.student.repository;
 
-import learn.springboot.project.student.model.Student;
+import jim.api.student.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

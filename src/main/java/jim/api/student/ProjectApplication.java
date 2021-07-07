@@ -1,4 +1,4 @@
-package learn.springboot.project.student;
+package jim.api.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

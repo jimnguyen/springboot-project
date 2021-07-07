@@ -1,7 +1,7 @@
-package learn.springboot.project.student.config;
+package jim.api.student.config;
 
-import learn.springboot.project.student.model.Student;
-import learn.springboot.project.student.repository.StudentRepository;
+import jim.api.student.model.Student;
+import jim.api.student.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
